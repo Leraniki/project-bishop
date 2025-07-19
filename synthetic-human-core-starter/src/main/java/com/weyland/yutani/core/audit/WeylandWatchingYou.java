@@ -5,7 +5,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.METHOD) // Аннотацию можно ставить только на методы
-@Retention(RetentionPolicy.RUNTIME) // Аннотация будет доступна во время выполнения программы
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
 public @interface WeylandWatchingYou {
 }

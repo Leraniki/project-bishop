@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class CommandController {
 
-    private final CommandService commandService; // Инжектируем сервис из нашего стартера!
+    private final CommandService commandService; // Инжектируем сервис из стартера
 
     @PostMapping("/command")
     public ResponseEntity<String> receiveCommand(@Valid @RequestBody CommandDto command) {
@@ -22,7 +22,7 @@ public class CommandController {
     }
 
     @GetMapping("/status")
-    @WeylandWatchingYou // Демонстрируем работу аудита!
+    @WeylandWatchingYou // Демонстрируем работу аудита
     public ResponseEntity<String> getStatus(String requester) {
         return ResponseEntity.ok("Состояние: Online. Все системы в норме. Запрашивающий: " + requester);
     }

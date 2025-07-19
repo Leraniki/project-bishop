@@ -6,13 +6,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+
 import java.time.Instant;
 import java.util.stream.Collectors;
 
-@ControllerAdvice // Этот класс будет ловить исключения со всего приложения
+@ControllerAdvice
 public class GlobalExceptionHandler {
 
-    // Обработчик ошибок валидации
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidationExceptions(MethodArgumentNotValidException ex) {
         String errors = ex.getBindingResult().getFieldErrors().stream()
@@ -37,6 +37,6 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    // DTO для ответа об ошибке
-    private record ErrorResponse(Instant timestamp, int status, String error, String message) {}
+    private record ErrorResponse(Instant timestamp, int status, String error, String message) {
+    }
 }
