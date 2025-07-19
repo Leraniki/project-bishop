@@ -6,26 +6,21 @@
     <parent>
         <groupId>com.weyland-yutani</groupId>
         <artifactId>project-bishop</artifactId>
-        <version>1.0.0</version> <!-- Убедитесь, что версия совпадает с родительской -->
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>bishop-prototype</artifactId>
-    <!-- УДАЛЕНО: Секция <properties> здесь не нужна, все наследуется -->
 
     <dependencies>
-        <!-- Наш главный стартер! -->
         <dependency>
             <groupId>com.weyland-yutani</groupId>
             <artifactId>synthetic-human-core-starter</artifactId>
-            <!-- ИСПРАВЛЕНО: Используем переменную, чтобы версия всегда совпадала с текущей версией проекта -->
             <version>${project.version}</version>
         </dependency>
-        <!-- Добавляем Web-функционал для REST API -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- Добавим зависимость для аннотации @RequiredArgsConstructor -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -33,7 +28,6 @@
         </dependency>
     </dependencies>
 
-    <!-- ДОБАВЛЕНО: Эта секция необходима, чтобы собрать исполняемый JAR-файл -->
     <build>
         <plugins>
             <plugin>

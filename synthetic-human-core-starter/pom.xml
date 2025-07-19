@@ -6,14 +6,12 @@
     <parent>
         <groupId>com.weyland-yutani</groupId>
         <artifactId>project-bishop</artifactId>
-        <version>1.0.0</version> <!-- Убедитесь, что версия совпадает с родительской -->
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>synthetic-human-core-starter</artifactId>
-    <!-- УДАЛЕНО: Секция <properties> здесь не нужна, все наследуется -->
 
     <dependencies>
-        <!-- Зависимости правильные, версии не указываем - они берутся из родителя -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -41,7 +39,6 @@
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
         </dependency>
-        <!-- Добавим зависимость для аннотации @RequiredArgsConstructor -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

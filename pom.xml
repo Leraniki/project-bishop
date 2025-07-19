@@ -6,7 +6,7 @@
 
     <groupId>com.weyland-yutani</groupId>
     <artifactId>project-bishop</artifactId>
-    <version>1.0.0</version> <!-- Используем чистую версию, а не SNAPSHOT, как в задании -->
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -15,18 +15,14 @@
     </modules>
 
     <properties>
-        <!-- ИСПРАВЛЕНО: Устанавливаем рекомендованную версию Java -->
         <java.version>17</java.version>
-        <!-- ИСПРАВЛЕНО: Задаем версию Spring Boot в одном месте -->
         <spring-boot.version>3.1.5</spring-boot.version>
 
-        <!-- Эти свойства будут унаследованы всеми модулями -->
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!-- Эта секция управляет ВЕРСИЯМИ зависимостей для всех модулей -->
     <dependencyManagement>
         <dependencies>
             <dependency>
