@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.weyland-yutani</groupId>
+        <artifactId>project-bishop</artifactId>
+        <version>1.0.0</version> <!-- Убедитесь, что версия совпадает с родительской -->
+    </parent>
+
+    <artifactId>bishop-prototype</artifactId>
+    <!-- УДАЛЕНО: Секция <properties> здесь не нужна, все наследуется -->
+
+    <dependencies>
+        <!-- Наш главный стартер! -->
+        <dependency>
+            <groupId>com.weyland-yutani</groupId>
+            <artifactId>synthetic-human-core-starter</artifactId>
+            <!-- ИСПРАВЛЕНО: Используем переменную, чтобы версия всегда совпадала с текущей версией проекта -->
+            <version>${project.version}</version>
+        </dependency>
+        <!-- Добавляем Web-функционал для REST API -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Добавим зависимость для аннотации @RequiredArgsConstructor -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+
+    <!-- ДОБАВЛЕНО: Эта секция необходима, чтобы собрать исполняемый JAR-файл -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
